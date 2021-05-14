@@ -1,3 +1,4 @@
+python-dotenv
 tweepy==3.10.0
 #imageai==2.1.6
 #tensorflow==2.4.0

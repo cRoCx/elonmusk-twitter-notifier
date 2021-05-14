@@ -51,7 +51,8 @@ def tweet_engine(status):
             # If detection data matches any of the keywords send e-mail
 #            for detection in detections:
 #                if any(name in detection["name"] for name in keywords):
-                    ai_result = True
+#                    ai_result = True
+            ai_result = True
         # At this point we know image passed AI validation
         if ai_result is True:
             send_mail(f'Picture tweeted - see attachment. Tweet: {status.text}', True)

@@ -1,3 +1,4 @@
+from dotenv import load_dotenv
 import tweepy
 from apiconfig import startup
 from tweets import tweet_engine
@@ -9,6 +10,8 @@ class MyStreamListener(tweepy.StreamListener):
 
 
 def main():
+
+    load_dotenv()
     # Connect to the Twitter API
     api = startup()
     elon_tweet_listener = tweepy.Stream(auth=api.auth, listener=MyStreamListener())
