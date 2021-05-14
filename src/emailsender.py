@@ -12,7 +12,7 @@ def send_mail(text: str, contains_img: bool):
     msg = EmailMessage()
     msg["From"] = mail_from
     msg["To"] = mail_to
-    msg["Subject"] = "New stonks tweet alert!"
+    msg["Subject"] = "Elon Musk tweet match!"
 
     msg.set_content(text)
 

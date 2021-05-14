@@ -1,5 +1,5 @@
 import os
-from imageai.Detection.Custom import CustomObjectDetection
+#from imageai.Detection.Custom import CustomObjectDetection
 import urllib
 import time
 from emailsender import send_mail
@@ -14,14 +14,14 @@ def get_current_path(filename: str):
 
 
 # ImageAi
-detector = CustomObjectDetection()
-detector.setModelTypeAsYOLOv3()
-detector.setModelPath(get_current_path("doge-ai.h5"))
-detector.setJsonPath(get_current_path("detection_config.json"))
-detector.loadModel()
+#detector = CustomObjectDetection()
+#detector.setModelTypeAsYOLOv3()
+#detector.setModelPath(get_current_path("doge-ai.h5"))
+#detector.setJsonPath(get_current_path("detection_config.json"))
+#detector.loadModel()
 
 # Keywords to detect
-keywords = ["stock", "share", "$", "doge", "crypto", "bitcoin"]
+keywords = ["stock", "share", "$", "doge", "dogecoin", "crypto", "bitcoin", "btc", "eth", "ether", "ethereum", "nft", "stonks"]
 ai_result = None
 
 
@@ -43,13 +43,14 @@ def tweet_engine(status):
                 media["media_url_https"], "image-to-test.jpg"
             )
             # Run the image through ImageAI to detect objects in it
-            detections = detector.detectObjectsFromImage(
-                input_image=os.path.join(os.getcwd(), "image-to-test.jpg"),
-                output_image_path=os.path.join(os.getcwd(), "image-tested.jpg"),
-            )
+#            detections = detector.detectObjectsFromImage(
+#                input_image=os.path.join(os.getcwd(), "image-to-test.jpg"),
+#                output_image_path=os.path.join(os.getcwd(), "image-tested.jpg"),
+#            )
+            os.rename("image-to-test.jpg", "image-tested.jpg")
             # If detection data matches any of the keywords send e-mail
-            for detection in detections:
-                if any(name in detection["name"] for name in keywords):
+#            for detection in detections:
+#                if any(name in detection["name"] for name in keywords):
                     ai_result = True
         # At this point we know image passed AI validation
         if ai_result is True:

@@ -1,5 +1,7 @@
 # Stonks Twitter Scanner 📈
 
+Remark: The AI image recognition has been disabled in this branch, so other Python versions are allowed, too. Remember this, when reading the original text below.
+
 <img src="https://img.shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8-blue" />
 
 This little scripts uses the [tweepy](https://www.tweepy.org/) Python library, which is a wrapper around the Twitter API.
